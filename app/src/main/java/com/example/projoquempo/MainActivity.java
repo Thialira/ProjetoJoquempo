@@ -25,16 +25,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onEntrarButtonClick(View view) {
+        // Aqui você inicia a nova atividade (tela de modo de jogo)
         Intent intent = new Intent(this, ModoDeJogo.class);
         startActivity(intent);
     }
-
-    public void onCadastroButtonClick(View view) {
-        Intent intent = new Intent(this, Cadastro.class);
-        startActivity(intent);
-    }
 }
-
 
 
 
