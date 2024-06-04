@@ -1,0 +1,48 @@
+package com.example.finalprojoquempo;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.parse.Parse;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Parse.initialize(new Parse.Configuration.Builder(this)
+                .applicationId("jZNeP38dSiKrOcBKxgopOpE4XqvzQLtf9S7bvx2o")
+                .clientKey("s2Rpwamwz39ADAb0Mq8zJfwy73bbEUZqwXAePMMe")
+                .server("https://parseapi.back4app.com")
+                .build());
+
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+
+    public void onEntrarButtonClick(View view) {
+        // Aqui você inicia a nova atividade (tela de login)
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+    }
+
+    public void onCadastroButtonClick(View view) {
+        // Aqui você inicia a nova atividade (tela de cadastro)
+        Intent intent = new Intent(this, Cadastro.class);
+        startActivity(intent);
+    }
+
+}
