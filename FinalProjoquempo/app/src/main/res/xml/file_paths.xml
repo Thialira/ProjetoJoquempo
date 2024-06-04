@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<file_paths.xml xmlns:android="http://schemas.android.com/apk/res/android">
+    <paths xmlns:android="http://schemas.android.com/apk/res/android">
+        <external-path
+            name="my_images"
+            path="Android/data/com.example.finalprojoquempo/files/Pictures" />
+    </paths>
+
+
+</file_paths.xml>
